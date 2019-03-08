@@ -33,11 +33,15 @@ public class packagemanager extends CordovaPlugin {
 
         if (action.equals("all")) {
             final PackageManager pm = cordova.getActivity().getPackageManager();
-            Intent intent = new Intent(Intent.ACTION_MAIN, null);
-            intent.addCategory(Intent.CATEGORY_LAUNCHER);
-            List<ResolveInfo> apps = pm.queryIntentActivities(intent, PackageManager.GET_META_DATA);
-            for (ResolveInfo packageInfo : apps) {
-                list.add(packageInfo.activityInfo.applicationInfo.uid + ";" + packageInfo.activityInfo.applicationInfo.dataDir + ";" + packageInfo.activityInfo.applicationInfo.packageName);
+            List<PackageInfo> installedPackages = pm.queryInstalledPackages(0);
+            for (PackageInfo packageInfo : installedPackages) {
+                JSONObject jsonPkgInfo = new JSONObject();
+                jsonPkgInfo.put("uid", packageInfo.applicationInfo.uid);
+                jsonPkgInfo.put("packageName", packageInfo.packageName);
+                jsonPkgInfo.put("versionCode", packageInfo.versionCode);
+                jsonPkgInfo.put("versionName", packageInfo.versionName);
+
+                list.add(jsonPkgInfo);
             }
         } else if(action.equals("none")) {
             List<ApplicationInfo> listInstalledApps = getInstalledApps(context);
