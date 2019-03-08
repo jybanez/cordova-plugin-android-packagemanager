@@ -10,7 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
+import android.content.pm.PackageInfo;
 import android.os.Build;
 
 import org.apache.cordova.PluginResult;
@@ -29,7 +29,7 @@ public class packagemanager extends CordovaPlugin {
 
         context = IS_AT_LEAST_LOLLIPOP ? cordova.getActivity().getWindow().getContext() : cordova.getActivity().getApplicationContext();
 
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<JSONObject> list = new ArrayList<JSONObject>();
 
         if (action.equals("all")) {
             final PackageManager pm = cordova.getActivity().getPackageManager();
