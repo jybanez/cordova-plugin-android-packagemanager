@@ -1,16 +1,16 @@
 {
-  "name": "cordova-plugin-packagemanager",
-  "version": "0.1.5",
-  "description": "A simple plugin that will return a list of installed applications or all on your smartphone.",
+  "name": "cordova-plugin-android-packagemanager",
+  "version": "0.2.2",
+  "description": "Cordova plugin that exposes a small subset of the fuctions from the Android Package Manager.",
   "cordova": {
-    "id": "cordova-plugin-packagemanager",
+    "id": "cordova-plugin-android-packagemanager",
     "platforms": [
       "android"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fbsanches/cordova-plugin-packagemanager"
+    "url": "https://github.com/citadelgroup/cordova-plugin-android-packagemanager"
   },
   "keywords": [
     "cordova",
@@ -20,9 +20,6 @@
     "package-Info",
     "Apps-Info"
   ],
-  "bugs": {
-    "url": "https://github.com/fbsanches/cordova-plugin-packagemanager/issues"
-  },
-  "author": "Fernando Arce",
+  "author": "Citadel Group (based on fork from Fernando Arce)",
   "license": "Apache-2.0"
 }
