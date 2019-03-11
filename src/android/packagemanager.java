@@ -149,7 +149,9 @@ public class packagemanager extends CordovaPlugin {
             jsonPkgInfo.put("gids", new JSONArray(packageInfo.gids));
         }
 
-        if (packageInfo.splitNames != null && packageInfo.splitNames.length > 0) {
+        if (Build.VERSION.SDK_INT >=21 &&
+                packageInfo.splitNames != null && 
+                packageInfo.splitNames.length > 0) {
             jsonPkgInfo.put("splitNames", new JSONArray(packageInfo.splitNames));
         }
 
@@ -167,12 +169,16 @@ public class packagemanager extends CordovaPlugin {
         jsonAppInfo.put("processName", appInfo.processName);
         jsonAppInfo.put("className", appInfo.className);
         jsonAppInfo.put("dataDir", appInfo.dataDir);
-        jsonAppInfo.put("deviceProtectedDataDir", appInfo.deviceProtectedDataDir);
-        jsonAppInfo.put("minSdkVersion", appInfo.minSdkVersion);
         jsonAppInfo.put("targetSdkVersion", appInfo.targetSdkVersion);
         jsonAppInfo.put("name", appInfo.name);
         jsonAppInfo.put("packageName", appInfo.packageName);
         jsonAppInfo.put("uid", appInfo.uid);
+
+        if (Build.VERSION.SDK_INT >= 24) {
+            jsonAppInfo.put("deviceProtectedDataDir", appInfo.deviceProtectedDataDir);
+            jsonAppInfo.put("minSdkVersion", appInfo.minSdkVersion);
+        }
+
 
         JSONObject extendedInfo = new JSONObject();
         extendedInfo.put("applicationLabel", pm.getApplicationLabel(appInfo).toString());
