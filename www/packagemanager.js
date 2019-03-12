@@ -41,9 +41,10 @@ module.exports = {
     var action = "queryIntentActivities";
     exec(successCallback, errorCallback, services, action, [{}]);
   },
-  getPackageInfo: function (successCallback, errorCallback, ...argsArr) {
+  getPackageInfo: function (successCallback, errorCallback) {
     var services = "packagemanager";
     var action = "getPackageInfo";
-    exec(successCallback, errorCallback, services, action, ...argsArr);
+    var argsArr = this.arguments.slice(2, this.arguments.length - 1);
+    exec(successCallback, errorCallback, services, action, argsArr);
   }
 }
