@@ -44,7 +44,7 @@ module.exports = {
   getPackageInfo: function (successCallback, errorCallback) {
     var services = "packagemanager";
     var action = "getPackageInfo";
-    var argsArr = arguments.slice(2, arguments.length - 1);
+    var argsArr = [].slice.call(arguments, 2, arguments.length)
     exec(successCallback, errorCallback, services, action, argsArr);
   }
 }
