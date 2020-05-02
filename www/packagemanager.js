@@ -46,5 +46,10 @@ module.exports = {
     var action = "getPackageInfo";
     var argsArr = [].slice.call(arguments, 2, arguments.length)
     exec(successCallback, errorCallback, services, action, argsArr);
+  },
+  finishAndRemoveTask: function (successCallback, errorCallback) {
+    var services = "packagemanager";
+    var action = "finishAndRemoveTask";
+    exec(successCallback, errorCallback, services, action, [{}]);
   }
 }

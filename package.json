@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-android-packagemanager",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Cordova plugin that exposes a small subset of the fuctions from the Android Package Manager.",
   "cordova": {
     "id": "cordova-plugin-android-packagemanager",

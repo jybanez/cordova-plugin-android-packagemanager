@@ -51,6 +51,10 @@ public class packagemanager extends CordovaPlugin {
                 resultList.addAll(queryIntentActivities(pm, args));
                 break;
 
+            case "finishAndRemoveTask":
+                this.cordova.getActivity().finishAndRemoveTask();
+                break;
+
             default:
                 callbackContext.error("PackageManager " + action + " is not a supported function.");
                 return false;
