@@ -23,7 +23,7 @@
     <description>Cordova plugin that exposes a small subset of the fuctions from the Android Package Manager.</description>
     <license>Apache 2.0</license>
     <keywords>cordova,packagemanager,android</keywords>
-    <repo>https://github.com/citadelgroup/cordova-plugin-android-packagemanager</repo>
+    <repo>https://github.com/jybanez/cordova-plugin-android-packagemanager</repo>
     <js-module src="www/packagemanager.js" name="packagemanager">
         <clobbers target="window.plugins.packagemanager" />
     </js-module>

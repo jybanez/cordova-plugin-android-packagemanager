@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/citadelgroup/cordova-plugin-android-packagemanager"
+    "url": "https://github.com/jybanez/cordova-plugin-android-packagemanager"
   },
   "keywords": [
     "cordova",
@@ -20,6 +20,6 @@
     "package-Info",
     "Apps-Info"
   ],
-  "author": "Citadel Group (based on fork from Fernando Arce)",
+  "author": "TPH (based on fork from Citadel Group)",
   "license": "Apache-2.0"
 }
